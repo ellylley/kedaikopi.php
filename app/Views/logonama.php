@@ -29,27 +29,30 @@
         font-weight: bold;
     }
     .profile-info img {
-        max-width: 100%;
-        margin-top: 10px;
-        display: block;
-    }
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: auto;
+    align: center;
+}
 </style>
 </head>
 <body>
 <form id="sellerForm" novalidate action="<?= base_url('home/aksietoko/')?>" method="POST" enctype="multipart/form-data">
     <div class="container">
-        <h1>Edit Toko</h1>
+        <h1>Setting</h1>
         <div class="profile-info">
             <label for="name">Nama Toko:</label>
             <input name="nama" type="text" class="form-control" id="nama" value="<?= $user->nama_toko?>">
         </div>
         <div class="profile-info">
             <label for="logo">Logo:</label>
+            <img src="<?php echo base_url('images/'.$user->logo) ?>" style="width: 120px; height: auto;">
             <input name="foto" type="file" class="form-control" id="foto" onchange="previewImage()">
             <input name="id" type="hidden" class="form-control" id="id" value="<?= $user->id_toko?>">
-            <img id="preview" src="<?= base_url('path_to_current_image/' . $user->foto) ?>" alt="Preview Image">
+            <!-- <img id="preview" src="<?= base_url('path_to_current_image/' . $user->foto) ?>" alt="Preview Image"> -->
         </div>
-        <button class="btn btn-warning btn-sm round">Save Edit</button>
+        <button class="btn btn-warning btn-sm ">Save Edit</button>
     </div>
 </form>
 
